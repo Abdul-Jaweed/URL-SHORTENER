@@ -16,7 +16,7 @@ Web App [Link](https://url-shortener-wgfj.onrender.com/)
 - SQLALchemy
 _ SQLMigrations
 
-### Infratecture Used
+### Infrastructure  Used
 
 - Render
 - Render Web Service
