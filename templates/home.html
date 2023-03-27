@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<style>
+  input[type=text], select {
+    width: 100%;
+    padding: 8px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(20, 13, 13);
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 100%;
+
+    
+    padding: 10px 15px;
+    margin: 4px 0;
+    cursor: pointer;
+  }
+  
+
+  #main-body{
+    margin: auto;
+    width: 75%;
+    margin-top: 75px;
+
+  }
+
+  </style>
+
+<div id="main-body">
+<div>
+  <form action="/" method="POST">
+    <label>ENTER URL</label>
+    <input type="text" name="name" placeholder="Enter the Url" required>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<div>
+  <label>SHORT URL</label>
+  <input type="text" value="{{s_url}}" id="myInput">
+  <input type="submit" onclick="myFunction()" value="Copy URL">
+</div>
+  
+</div>
+
+
+<script>
+function myFunction() {
+  var copyText = document.getElementById("myInput");
+
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); 
+
+  navigator.clipboard.writeText(copyText.value);
+  
+}
+</script>
+{% endblock%}

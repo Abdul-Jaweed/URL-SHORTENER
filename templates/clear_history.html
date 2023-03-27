@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>History</h1>
+
+{% if alllinks %}
+    <table>
+        <thead>
+            <tr>
+                <th>Original URL</th>
+                <th>Short URL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for link in alllinks %}
+                <tr>
+                    <td>{{ link.url }}</td>
+                    <td>{{ link.shorter }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No links found.</p>
+{% endif %}
+
+<form action="{{ url_for('clear_history') }}" method="POST">
+    <button type="submit">Clear history</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+History
+{% endblock %}
+
+{% block content %}
+<style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {background-color: #f2f2f2;}
+    
+    .center {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    form button {
+        padding: 10px 20px;
+        font-size: 16px;
+        padding: 8px 10px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid rgb(20, 13, 13);
+        border-radius: 4px;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+    
+
+</style>
+ 
+<div style="overflow-x: auto;">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>ORIGINAL URL</th>
+            <th>SHORT URL</th>
+        </tr>
+
+       {% for url in alllinks %}
+        <tr>
+            <td>{{url.id}}</td>
+            <td>{{url.url}}</td>
+            <td>{{url.shorter}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<div class="center">
+    <form action="{{ url_for('clear_history') }}" method="POST">
+        <button type="submit">Clear History</button>
+    </form>
+</div>
+
+{% endblock %}
