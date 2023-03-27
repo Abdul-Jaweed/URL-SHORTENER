@@ -10,7 +10,7 @@ Web App [Link](https://url-shortener-wgfj.onrender.com/)
 - Python
 - VS Code
 - Flask
-- HTMl5
+- HTML5
 - CSS
 - SQLite
 - SQLALchemy
