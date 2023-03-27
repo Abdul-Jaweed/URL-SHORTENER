@@ -69,5 +69,6 @@ def clear_history():
 
 
 if __name__=="__main__":
-    app.run()
+    app.run(debug=True) # for localhost
+    #app.run() # for deployment
     
